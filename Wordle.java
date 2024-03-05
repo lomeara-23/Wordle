@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Wordle {
 
     public static void main(String[] args) {
-        playWordle(true);
+        playWordle(false);
     }
 
     public static void playWordle(boolean debug) {
