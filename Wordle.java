@@ -63,14 +63,14 @@ public class Wordle {
             char guessLetter = guess.charAt(i);
             char answerLetter = answer.charAt(i);
 
-            // Green: Correct letter in the correct spot
+            // Green ("G"): Correct letter in the correct spot
             if (guessLetter == answerLetter) {
                 feedback.append("G");
             } else if (answer.indexOf(guessLetter) != -1) {
-                // Yellow: Correct letter in the wrong spot
+                // Yellow ("Y"): Correct letter in the wrong spot
                 feedback.append("Y");
             } else {
-                // Grey: Incorrect letter
+                // Grey ("X"): Incorrect letter
                 feedback.append("X");
             }
         }
