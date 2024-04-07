@@ -27,7 +27,6 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Move into Maven directory
-      run: cd .\wordle\
     - name: Build with Maven
       run: mvn clean test
+      working-directory: ${{github.workspace}}\wordle\
