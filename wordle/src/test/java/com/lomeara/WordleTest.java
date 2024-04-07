@@ -1,6 +1,7 @@
-import org.junit.jupiter.api.Test;
+package com.lomeara;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 public class WordleTest {
     
@@ -12,7 +13,7 @@ public class WordleTest {
 
         String feedback = Wordle.checkGuess(guess, answer);
 
-        assertEquals(expectedFeedback, feedback, "Guess should be all G for correct placement");
+        assertEquals("Guess should be all G for correct placement", expectedFeedback, feedback);
     }
 
     @Test
@@ -23,7 +24,7 @@ public class WordleTest {
 
         String feedback = Wordle.checkGuess(guess, answer);
 
-        assertEquals(expectedFeedback, feedback, "Guess should have Y for misplaced letters");
+        assertEquals("Guess should have Y for misplaced letters", expectedFeedback, feedback);
     }
 
     @Test
@@ -34,6 +35,6 @@ public class WordleTest {
 
         String feedback = Wordle.checkGuess(guess, answer);
 
-        assertEquals(expectedFeedback, feedback, "Guess should have X for incorrect letters");
+        assertEquals("Guess should have X for incorrect letters", expectedFeedback, feedback);
     }
 }
