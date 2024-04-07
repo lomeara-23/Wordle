@@ -38,4 +38,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         VALIDATE_ALL_CODEBASE: true
         VALIDATE_JAVA: true
-        VALIDATE_MARKDOWN: false
+        # VALIDATE_MARKDOWN: false
