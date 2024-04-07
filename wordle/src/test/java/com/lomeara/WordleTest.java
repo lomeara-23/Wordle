@@ -31,7 +31,7 @@ public class WordleTest {
     public void testIncorrectLetters() {
         String guess = "trout";
         String answer = "beach";
-        String expectedFeedback = "XXXXX";
+        String expectedFeedback = "XX123XXX";
 
         String feedback = Wordle.checkGuess(guess, answer);
 
