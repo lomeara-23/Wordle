@@ -33,7 +33,10 @@ final class Wordle {
      * @param args The command-line arguments.
      */
     public static void main(final String[] args) {
-        playWordle(false);
+        boolean debugVar = false;
+        if (args[0] == "debug")
+            debugVar = true;
+        playWordle(debugVar);
     }
 
     /**
