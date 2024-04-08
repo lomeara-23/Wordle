@@ -9,7 +9,8 @@ import java.util.Scanner;
 final class Wordle {
 
     /**
-     * The Wordle class represents a game where players guess a word by trying different combinations of letters.
+     * The Wordle class represents a game where players guess a
+     * word by trying different combinations of letters.
      * This class is a utility class and cannot be instantiated.
      */
     private Wordle() {
