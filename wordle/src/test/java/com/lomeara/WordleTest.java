@@ -34,7 +34,7 @@ public class WordleTest {
 
         String feedback = Wordle.checkGuess(guess, answer);
 
-        assertEquals("Guess should have Y for misplaced letters", 
+        assertEquals("Guess should have Y for misplaced letters",
                     expectedFeedback, feedback);
     }
 

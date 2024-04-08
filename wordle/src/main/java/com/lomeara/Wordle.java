@@ -7,12 +7,21 @@ import java.util.Scanner;
  * The Wordle class is a simple word-guessing game.
  */
 final class Wordle {
-    /*
+
+    /**
+     * The Wordle class represents a game where players guess a word by trying different combinations of letters.
+     * This class is a utility class and cannot be instantiated.
+     */
+    private Wordle() {
+        throw new AssertionError();
+    }
+
+    /**
      * Allowed guess length.
      */
     public static final int GUESS_LENGTH = 5;
 
-    /*
+    /**
      * Maximum number of guesses a player gets.
      */
     public static final int MAX_ATTEMPTS = 6;
@@ -67,16 +76,16 @@ final class Wordle {
 
             // Win condition
             if (feedback.equals("GGGGG")) {
-                System.out.println("Congratulations! You guessed the word in " + 
-                                    attempts + " tries.");
+                System.out.println("Congratulations! You guessed the word in "
+                                    + attempts + " tries.");
                 break;
             }
         }
 
         // Lose condition
         if (!feedback.equals("GGGGG")) {
-            System.out.println("You ran out of guesses." + 
-                                "The word was: " + answer);
+            System.out.println("You ran out of guesses."
+                                + "The word was: " + answer);
         }
 
         scanner.close();
