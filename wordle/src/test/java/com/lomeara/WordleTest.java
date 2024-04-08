@@ -1,10 +1,17 @@
+/**
+ * This is a test class for the Wordle class.
+ */
 package com.lomeara;
+
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class WordleTest {
-    
+
+    /**
+     * Test for correct guess.
+     */
     @Test
     public void testCorrectGuess() {
         String guess = "house";
@@ -16,6 +23,9 @@ public class WordleTest {
         assertEquals("Guess should be all G for correct placement", expectedFeedback, feedback);
     }
 
+    /**
+     * Test for incorrect placement.
+     */
     @Test
     public void testIncorrectPlacement() {
         String guess = "shave";
@@ -27,6 +37,9 @@ public class WordleTest {
         assertEquals("Guess should have Y for misplaced letters", expectedFeedback, feedback);
     }
 
+    /**
+     * Test for incorrect letters.
+     */
     @Test
     public void testIncorrectLetters() {
         String guess = "trout";

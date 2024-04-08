@@ -1,21 +1,38 @@
 package com.lomeara;
+
 import java.util.Random;
 import java.util.Scanner;
 
-public class Wordle {
+/**
+ * The Wordle class is a simple word-guessing game.
+ */
+class Wordle {
+    // Constants
+    public static final int GUESS_LENGTH = 5;
+    public static final int MAX_ATTEMPTS = 6;
 
-    public static void main(String[] args) {
+    /**
+     * The main method that starts the Wordle game.
+     *
+     * @param args The command-line arguments.
+     */
+    public static void main(final String[] args) {
         playWordle(false);
     }
 
-    public static void playWordle(boolean debug) {
+    /**
+     * Plays the Wordle game.
+     *
+     * @param debug Set to true to enable debug mode.
+     */
+    public static void playWordle(final boolean debug) {
         // Word bank (replace with a real word list if desired)
         String[] wordBank = {"house", "train", "apple", "beach", "funny"};
 
         // Randomly select the answer word
         Random random = new Random();
         String answer = wordBank[random.nextInt(wordBank.length)];
-        if(debug == true){
+        if (debug) {
             answer = "debug";
         } else {
             answer = wordBank[random.nextInt(wordBank.length)];
@@ -23,17 +40,17 @@ public class Wordle {
 
         // User input scanner
         Scanner scanner = new Scanner(System.in);
-        
+
         // Guess result
         String feedback = "";
 
         // Game loop (6 attempts)
-        for (int attempts = 1; attempts <= 6; attempts++) {
+        for (int attempts = 1; attempts <= MAX_ATTEMPTS; attempts++) {
             System.out.println("Guess #" + attempts + ": ");
             String guess = scanner.nextLine().toLowerCase();
 
             // Check guess length
-            if (guess.length() != 5) {
+            if (guess.length() != GUESS_LENGTH) {
                 System.out.println("Invalid guess: Must be 5 letters long.");
                 continue;
             }
@@ -57,10 +74,18 @@ public class Wordle {
         scanner.close();
     }
 
-    public static String checkGuess(String guess, String answer) {
+    /**
+     * Checks the guess against the answer and provides feedback.
+     *
+     * @param guess  The user's guess.
+     * @param answer The correct answer.
+     * @return The feedback string.
+     */
+    public static String checkGuess(final String guess, final String answer) {
+
         StringBuilder feedback = new StringBuilder();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < GUESS_LENGTH; i++) {
             char guessLetter = guess.charAt(i);
             char answerLetter = answer.charAt(i);
 
