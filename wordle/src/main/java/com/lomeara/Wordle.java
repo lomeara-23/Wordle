@@ -34,8 +34,9 @@ final class Wordle {
      */
     public static void main(final String[] args) {
         boolean debugVar = false;
-        if (args[0] == "debug")
+        if (args[0] == "debug") {
             debugVar = true;
+        }
         playWordle(debugVar);
     }
 
