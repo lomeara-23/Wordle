@@ -6,9 +6,15 @@ import java.util.Scanner;
 /**
  * The Wordle class is a simple word-guessing game.
  */
-class Wordle {
-    // Constants
+final class Wordle {
+    /*
+     * Allowed guess length.
+     */
     public static final int GUESS_LENGTH = 5;
+
+    /*
+     * Maximum number of guesses a player gets.
+     */
     public static final int MAX_ATTEMPTS = 6;
 
     /**
@@ -61,14 +67,16 @@ class Wordle {
 
             // Win condition
             if (feedback.equals("GGGGG")) {
-                System.out.println("Congratulations! You guessed the word in " + attempts + " tries.");
+                System.out.println("Congratulations! You guessed the word in " + 
+                                    attempts + " tries.");
                 break;
             }
         }
 
         // Lose condition
         if (!feedback.equals("GGGGG")) {
-            System.out.println("You ran out of guesses. The word was: " + answer);
+            System.out.println("You ran out of guesses." + 
+                                "The word was: " + answer);
         }
 
         scanner.close();

@@ -7,8 +7,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class WordleTest {
-
+final class WordleTest {
     /**
      * Test for correct guess.
      */
@@ -20,7 +19,8 @@ public class WordleTest {
 
         String feedback = Wordle.checkGuess(guess, answer);
 
-        assertEquals("Guess should be all G for correct placement", expectedFeedback, feedback);
+        assertEquals("Guess should be all G for correct placement",
+                    expectedFeedback, feedback);
     }
 
     /**
@@ -34,7 +34,8 @@ public class WordleTest {
 
         String feedback = Wordle.checkGuess(guess, answer);
 
-        assertEquals("Guess should have Y for misplaced letters", expectedFeedback, feedback);
+        assertEquals("Guess should have Y for misplaced letters", 
+                    expectedFeedback, feedback);
     }
 
     /**
@@ -48,6 +49,7 @@ public class WordleTest {
 
         String feedback = Wordle.checkGuess(guess, answer);
 
-        assertEquals("Guess should have X for incorrect letters", expectedFeedback, feedback);
+        assertEquals("Guess should have X for incorrect letters",
+                    expectedFeedback, feedback);
     }
 }
