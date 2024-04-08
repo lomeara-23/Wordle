@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-final class WordleTest {
+public class WordleTest {
     /**
      * Test for correct guess.
      */
