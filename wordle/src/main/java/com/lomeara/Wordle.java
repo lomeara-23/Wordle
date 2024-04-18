@@ -2,11 +2,15 @@ package com.lomeara;
 
 import java.util.Random;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 /**
  * The Wordle class is a simple word-guessing game.
  */
 final class Wordle {
+    public static ArrayList<String> wordBank;
 
     /**
      * The Wordle class represents a game where players guess a
@@ -47,15 +51,15 @@ final class Wordle {
      */
     public static void playWordle(final boolean debug) {
         // Word bank (replace with a real word list if desired)
-        String[] wordBank = {"house", "train", "apple", "beach", "funny"};
-
+        readWordsFromFile("wordlist.txt");
+        
         // Randomly select the answer word
         Random random = new Random();
-        String answer = wordBank[random.nextInt(wordBank.length)];
+        String answer = wordBank.get(random.nextInt(wordBank.size()));
         if (debug) {
             answer = "debug";
         } else {
-            answer = wordBank[random.nextInt(wordBank.length)];
+            answer = wordBank.get(random.nextInt(wordBank.size()));
         }
 
         // User input scanner
@@ -124,5 +128,22 @@ final class Wordle {
         }
 
         return feedback.toString();
+    }
+    public static void readWordsFromFile(String filename) {
+        wordBank = new ArrayList<>(); // Initialize the ArrayList
+
+        try {
+            File file = new File(filename);
+            Scanner scanner = new Scanner(file);
+
+            // Read words from the file and add them to the word bank
+            while (scanner.hasNextLine()) {
+                wordBank.add(scanner.nextLine().toLowerCase());
+            }
+
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + filename);
+        }
     }
 }
