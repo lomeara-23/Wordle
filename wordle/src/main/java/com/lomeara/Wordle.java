@@ -11,13 +11,13 @@ import java.util.ArrayList;
  */
 final class Wordle {
     /**
-     * Private member variable to create a word Bank
+     * Private member variable to create a word Bank.
      */
     private static ArrayList<String> wordBank;
     /*
      * Public method to access word bank
      */
-    public static ArrayList<String> returnWordBank(){
+    public static ArrayList<String> returnWordBank() {
         return Wordle.wordBank;
     }
 
@@ -60,7 +60,6 @@ final class Wordle {
      */
     public static void playWordle(final boolean debug) {
         readWordsFromFile("wordlist.txt");
-        
         // Randomly select the answer word
         Random random = new Random();
         String answer = wordBank.get(random.nextInt(wordBank.size()));
@@ -137,7 +136,7 @@ final class Wordle {
 
         return feedback.toString();
     }
-    public static void readWordsFromFile(String filename) {
+    public static void readWordsFromFile(final String filename) {
         wordBank = new ArrayList<>(); // Initialize the ArrayList
 
         try {
