@@ -10,7 +10,16 @@ import java.util.ArrayList;
  * The Wordle class is a simple word-guessing game.
  */
 final class Wordle {
-    public static ArrayList<String> wordBank;
+    /**
+     * Private member variable to create a word Bank
+     */
+    private static ArrayList<String> wordBank;
+    /*
+     * Public method to access word bank
+     */
+    public static ArrayList<String> returnWordBank(){
+        return Wordle.wordBank;
+    }
 
     /**
      * The Wordle class represents a game where players guess a
@@ -50,7 +59,6 @@ final class Wordle {
      * @param debug Set to true to enable debug mode.
      */
     public static void playWordle(final boolean debug) {
-        // Word bank (replace with a real word list if desired)
         readWordsFromFile("wordlist.txt");
         
         // Randomly select the answer word
